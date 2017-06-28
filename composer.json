@@ -34,8 +34,5 @@
         "psr-4": {
             "Izayoi256\\PimpleDumper\\Test\\": ["tests/"]
         }
-    },
-    "extra": {
-        "dev-master": "2.1-dev"
     }
 }
