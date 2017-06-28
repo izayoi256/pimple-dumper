@@ -1,0 +1,28 @@
+[
+    {
+        "name": "foo",
+        "type": "class",
+        "value": "ArrayObject"
+    },
+    {
+        "name": "bar",
+        "type": "boolean",
+        "value": false
+    },
+    {
+        "name": "baz",
+        "type": "integer",
+        "value": 100
+    },
+    {
+        "name": "hoge",
+        "type": "container",
+        "value": [
+            {
+                "name": "fuga",
+                "type": "string",
+                "value": "piyo"
+            }
+        ]
+    }
+]
