@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Izayoi256\PimpleDumper\Test\Parser;
+namespace Izayoi256\PimpleDumper\Test\ServiceProvider;
 
 use Izayoi256\PimpleDumper\Parser\DefaultParser;
 use Izayoi256\PimpleDumper\ServiceProvider\PimpleDumperServiceProvider;
