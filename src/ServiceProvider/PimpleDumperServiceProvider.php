@@ -46,7 +46,7 @@ class PimpleDumperServiceProvider implements ServiceProviderInterface
             return $container['pimple_dumper.pimple_json.dirpath'] . DIRECTORY_SEPARATOR . $container['pimple_dumper.pimple_json.filename'];
         };
 
-        $container['pimple_dumper.pimple_json.dirpath'] = dirname(dirname(dirname(dirname(__DIR__))));
+        $container['pimple_dumper.pimple_json.dirpath'] = dirname(dirname(dirname(dirname(dirname(__DIR__)))));
         $container['pimple_dumper.pimple_json.filename'] = 'pimple.json';
     }
 }
