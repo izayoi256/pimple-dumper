@@ -8,14 +8,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Izayoi256\PimpleDumper\Test\ServiceProvider;
+namespace Izayoi256\PimpleDumper\Test;
 
-use Izayoi256\PimpleDumper\Parser\DefaultParser;
-use Izayoi256\PimpleDumper\ServiceProvider\PimpleDumperServiceProvider;
-use Izayoi256\PimpleDumper\Test\PimpleDumperTestCase;
+use Izayoi256\PimpleDumper\PimpleDumper;
 use Pimple\Container;
 
-class PimpleDumperServiceProviderTest extends PimpleDumperTestCase
+class PimpleDumperTest extends PimpleDumperTestCase
 {
     /** @var string */
     protected $dst;
@@ -24,7 +22,7 @@ class PimpleDumperServiceProviderTest extends PimpleDumperTestCase
     {
         parent::setUp();
 
-        $this->dst = realpath(dirname(dirname(__DIR__))) . DIRECTORY_SEPARATOR . 'build' . DIRECTORY_SEPARATOR . 'pimple.json';
+        $this->dst = realpath(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'build' . DIRECTORY_SEPARATOR . 'pimple.json';
         if (file_exists($this->dst)) {
             unlink($this->dst);
         }
@@ -42,7 +40,7 @@ class PimpleDumperServiceProviderTest extends PimpleDumperTestCase
     public function testRegister()
     {
         $this->assertFileNotExists($this->dst);
-        $serviceProvider = new PimpleDumperServiceProvider();
+        $serviceProvider = new PimpleDumper();
         $container = new Container();
         $container->register($serviceProvider);
         $container['pimple_dumper.pimple_json.dirpath'] = dirname($this->dst);
