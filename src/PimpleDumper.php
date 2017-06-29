@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Izayoi256\PimpleDumper\ServiceProvider;
+namespace Izayoi256\PimpleDumper;
 
 use Izayoi256\PimpleDumper\Container\PimpleContainer;
 use Izayoi256\PimpleDumper\Dumper\PimpleJsonDumper;
@@ -16,7 +16,7 @@ use Izayoi256\PimpleDumper\Parser\PimpleParser;
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 
-class PimpleDumperServiceProvider implements ServiceProviderInterface
+class PimpleDumper implements ServiceProviderInterface
 {
     /** @var Container */
     protected $container;
@@ -46,7 +46,7 @@ class PimpleDumperServiceProvider implements ServiceProviderInterface
             return $container['pimple_dumper.pimple_json.dirpath'] . DIRECTORY_SEPARATOR . $container['pimple_dumper.pimple_json.filename'];
         };
 
-        $container['pimple_dumper.pimple_json.dirpath'] = dirname(dirname(dirname(dirname(dirname(__DIR__)))));
+        $container['pimple_dumper.pimple_json.dirpath'] = dirname(dirname(dirname(dirname(__DIR__))));
         $container['pimple_dumper.pimple_json.filename'] = 'pimple.json';
     }
 }
