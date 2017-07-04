@@ -30,7 +30,6 @@ class DefaultParser implements ParserInterface
             case is_string($element):
             case is_int($element):
             case is_bool($element):
-            case is_null($element):
                 $type = gettype($element);
                 $value = $element;
                 break;
@@ -40,6 +39,10 @@ class DefaultParser implements ParserInterface
                 break;
             case is_array($element):
                 $type = gettype($element);
+                $value = '';
+                break;
+            case is_null($element):
+                $type = 'null';
                 $value = '';
                 break;
             default:
